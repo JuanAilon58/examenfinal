@@ -1,6 +1,6 @@
 package com.umg.examen.controller;
 
-import com.umg.examen.entity.Proveedor;
+import com.umg.examen.dto.ProveedorDTO;
 import com.umg.examen.service.ProveedorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,26 +16,26 @@ public class ProveedorController {
     private ProveedorService proveedorService;
 
     @GetMapping
-    public List<Proveedor> getAllProveedores() {
+    public List<ProveedorDTO> getAllProveedores() {
         return proveedorService.getAllProveedores();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Proveedor> getProveedorById(@PathVariable Integer id) {
+    public ResponseEntity<ProveedorDTO> getProveedorById(@PathVariable Integer id) {
         return proveedorService.getProveedorById(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
 
     @PostMapping
-    public Proveedor createProveedor(@RequestBody Proveedor proveedor) {
+    public ProveedorDTO createProveedor(@RequestBody ProveedorDTO proveedor) {
         return proveedorService.createProveedor(proveedor);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Proveedor> updateProveedor(@PathVariable Integer id, @RequestBody Proveedor proveedorDetails) {
+    public ResponseEntity<ProveedorDTO> updateProveedor(@PathVariable Integer id, @RequestBody ProveedorDTO proveedorDetails) {
         try {
-            Proveedor updatedProveedor = proveedorService.updateProveedor(id, proveedorDetails);
+            ProveedorDTO updatedProveedor = proveedorService.updateProveedor(id, proveedorDetails);
             return ResponseEntity.ok(updatedProveedor);
         } catch (RuntimeException e) {
             return ResponseEntity.notFound().build();
