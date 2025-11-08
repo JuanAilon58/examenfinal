@@ -1,7 +1,4 @@
-# Examen Final - Sistema de Inventario
-
-Este es un sistema de backend para gestionar el inventario de una pequeña empresa de importaciones.
-
+# Examen Final 
 ## Análisis y Diseño
 
 ### Diagrama ER (Entidad-Relación)
@@ -59,12 +56,6 @@ En la raíz del proyecto, ejecuta el siguiente comando:
 ```bash
 ./mvnw spring-boot:run
 ```
-o en Windows:
-```bash
-.\mvnw.cmd spring-boot:run
-```
-
-La aplicación se iniciará en `http://localhost:8080`.
 
 **b) Usando Maven:**
 
@@ -74,19 +65,8 @@ Si tienes Maven instalado globalmente, puedes usar:
 mvn spring-boot:run
 ```
 
-La aplicación se iniciará en `http://localhost:8080`.
-
 ### 3. Datos de Prueba
-
-La base de datos se inicializará automáticamente con los siguientes datos de prueba gracias al archivo `src/main/resources/data.sql`:
-*   3 Proveedores
-*   5 Productos
-*   10 Movimientos (5 de entrada y 5 de salida)
-
 ## Endpoints de la API
-
-La colección de Postman se puede encontrar en el siguiente enlace:
-*   [TODO: Añadir enlace a la colección de Postman]
 
 ### Proveedores (`/api/proveedores`)
 
